@@ -84,13 +84,16 @@ function createBubble(sampleData) {
         marker: {
             color: sampleData.otu_ids,
             size: sampleData.sample_values
-        }
+        },
     }
 
     let traceData = [trace1];
 
     var layout = {
         showlegend: false,
+        xaxis: {
+            title: "OTU ID"
+        }
       };
       
       Plotly.newPlot("bubble", traceData, layout);
@@ -121,8 +124,8 @@ function createGauge(metadata) {
         mode: "gauge",
         gauge: {
             axis: { 
-                range: [null, 9] 
-            },
+                range: [0, 9]
+            }
         }
     };
 
@@ -132,7 +135,7 @@ function createGauge(metadata) {
         margin: { 
             t: 0, 
             b: 100 
-        }
+        },
       };
       
       
